@@ -17,38 +17,28 @@ class HomePage
     private $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text",nullable=true)
      */
-    private $title1;
+    private $title;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text",nullable=true)
      */
     private $about_us;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $title2;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $about_us2;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitle1(): ?string
+    public function getTitle(): ?string
     {
-        return $this->title1;
+        return $this->title;
     }
 
-    public function setTitle1(string $title1): self
+    public function setTitle(string $title): self
     {
-        $this->title1 = $title1;
+        $this->title = $title;
 
         return $this;
     }
@@ -65,27 +55,5 @@ class HomePage
         return $this;
     }
 
-    public function getTitle2(): ?string
-    {
-        return $this->title2;
-    }
 
-    public function setTitle2(string $title2): self
-    {
-        $this->title2 = $title2;
-
-        return $this;
-    }
-
-    public function getAboutUs2(): ?string
-    {
-        return $this->about_us2;
-    }
-
-    public function setAboutUs2(string $about_us2): self
-    {
-        $this->about_us2 = $about_us2;
-
-        return $this;
-    }
 }

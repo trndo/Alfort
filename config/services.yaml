@@ -15,6 +15,33 @@ services:
                             # fetching services directly from the container via $container->get() won't work.
                             # The best practice is to be explicit about your dependencies anyway.
 
+    admin.category:
+        class: App\Admin\HomePageAdmin
+        arguments: [~, App\Entity\HomePage, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: 'Головна' }
+        public: true
+
+    admin.adr:
+        class: App\Admin\ADRAdmin
+        arguments: [~, App\Entity\ADR, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: ADR}
+        public: true
+
+    admin.smb:
+            class: App\Admin\SMBAdmin
+            arguments: [~, App\Entity\SMB, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: SMB}
+            public: true
+
+    admin.usefl:
+        class: App\Admin\UsefulAdmin
+        arguments: [~, App\Entity\Useful, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: 'Корисне'}
+        public: true
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:

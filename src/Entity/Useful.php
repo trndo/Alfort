@@ -17,75 +17,42 @@ class Useful
     private $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text",nullable=true)
      */
-    private $aTitle1;
+    private $aTitle;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text",nullable=true)
      */
-    private $aBody1;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $aTitle2;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $aBody2;
+    private $aBody;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getATitle1(): ?string
+    public function getATitle(): ?string
     {
-        return $this->aTitle1;
+        return $this->aTitle;
     }
 
-    public function setATitle1(string $aTitle1): self
+    public function setATitle(string $aTitle): self
     {
-        $this->aTitle1 = $aTitle1;
+        $this->aTitle = $aTitle;
 
         return $this;
     }
 
-    public function getABody1(): ?string
+    public function getABody(): ?string
     {
-        return $this->aBody1;
+        return $this->aBody;
     }
 
-    public function setABody1(string $aBody1): self
+    public function setABody(string $aBody): self
     {
-        $this->aBody1 = $aBody1;
+        $this->aBody = $aBody;
 
         return $this;
     }
 
-    public function getATitle2(): ?string
-    {
-        return $this->aTitle2;
-    }
-
-    public function setATitle2(string $aTitle2): self
-    {
-        $this->aTitle2 = $aTitle2;
-
-        return $this;
-    }
-
-    public function getABody2(): ?string
-    {
-        return $this->aBody2;
-    }
-
-    public function setABody2(string $aBody2): self
-    {
-        $this->aBody2 = $aBody2;
-
-        return $this;
-    }
 }
