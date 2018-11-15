@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 ">
+                 <h2 class="title">{{ dataHomePage.0.title }}</h2>
+                <p>{{dataHomePage.0.aboutUs}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-md-1 ">
+                <h2 class="title">{{ dataHomePage.1.title }}</h2>
+                <img class="img-responsive" src="/images/fura.jpg">
+                <p>{{dataHomePage.1.aboutUs}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <h2 class="title">{{ dataHomePage.2.title }}</h2>
+                <p>{{dataHomePage.2.aboutUs}}</p>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md align-self-end area1">
+                    <div class="block1">
+                        <h5 class="text-center" >Швидкість</h5>
+                    </div>
+                </div>
+                <div class="col-md align-self-start area2">
+                    <div class="block2">
+                        <h5 class="text-center">Надійність</h5>
+                    </div>
+                </div>
+                <div class="col-md align-self-end area3">
+                    <div class="block3">
+                        <h5 class="text-center">Якість</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+

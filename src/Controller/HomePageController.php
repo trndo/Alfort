@@ -1,0 +1,28 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: vel-vet
+ * Date: 08.11.18
+ * Time: 22:01
+ */
+
+namespace App\Controller;
+
+use App\Entity\HomePage;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class HomePageController extends AbstractController
+{
+    /**
+     * @Route("/",name="homePage")
+     */
+    public function index()
+    {
+        $repoHomePage=$this->getDoctrine()->getRepository(HomePage::class);
+        $homePage=$repoHomePage->findAll();
+        return $this->render('front/homepage.html.twig',[
+            'dataHomePage' => $homePage]);
+    }
+
+}

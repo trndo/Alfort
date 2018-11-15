@@ -1,0 +1,23 @@
+<footer>
+    <div class="row">
+        <div class="col-md offset-md-2">
+            <p>Контакти:</p>
+            <a href="tel:01234567890" class="tel1">+380(000)000-00-00</a><br>
+            <a href="tel:01234567890" class="tel2">+380(000)000-00-00</a><br>
+            <a href="tel:01234567890" class="tel3">+380(000)000-00-00</a>
+        </div>
+        <div class="col-md offset-md-1">
+            <p>Email:</p>
+            <p class="copyText">inf@gmail.com</p>
+            <p class="copyText">iform@ukr.net</p>
+            <p class="copyText">dog@yahoo.com</p>
+            <script>
+                $('.copyText').click(function () {
+                    var content = $(this).text();
+                    navigator.clipboard.writeText(content);
+                    $('#copyAlert').text('Cкопировано').fadeIn('slow').fadeOut('slow');
+                });
+            </script>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,111 @@
+html,body{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-image:url('/images/header_back.jpg');
+    background-color: #7a43b6;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 0;
+    z-index: 1;
+}
+
+.logo img{
+    width: 100%;
+}
+.menu li {
+    background-color: #f0f0f0;
+    font-size: 18px!important;
+
+
+}
+.menu a{
+    color:#0f0f0f!important;
+}
+
+.nav-link {
+    display: inline!important;
+
+}
+#first{
+    padding: 0 15px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+h3{
+    margin-top: 45px;
+    color: #ffffff;
+}
+
+ a.btn{
+    color:#ffffff;
+}
+a.btn :hover{
+    color:transparent;
+}
+.title{
+    margin-top: 20px;
+}
+.img-responsive{
+    width:735px;
+    height:345px;
+    display: inline-block;
+}
+footer{
+    background-image: url("/images/footer_back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.area1{
+    height: 170px;
+    background-color: #404040;
+    box-shadow:
+            0 1px 15px rgba(0, 0, 0, .3),
+            -23px 0 20px -23px rgba(0, 0, 0, .8),
+            23px 0 20px -23px rgba(0, 0, 0, .8),
+            0 0 40px rgba(0, 0, 0, .1) inset;
+    z-index: 1;
+}
+.area2{
+    height: 220px;
+    background-color: #669999;
+    box-shadow:
+            0 1px 15px rgba(0, 0, 0, .3),
+            -23px 0 20px -23px rgba(0, 0, 0, .8),
+            23px 0 20px -23px rgba(0, 0, 0, .8),
+            0 0 40px rgba(0, 0, 0, .1) inset;
+    z-index: 2;
+}
+.area3{
+    height: 170px;
+    background-color: #996699;
+    z-index: 1;
+    box-shadow:
+            0 1px 15px rgba(0, 0, 0, .3),
+            -23px 0 20px -23px rgba(0, 0, 0, .8),
+            23px 0 20px -23px rgba(0, 0, 0, .8),
+            0 0 40px rgba(0, 0, 0, .1) inset;
+}
+.copyText{
+    color: #FFFFFF;
+}
+#copyAlert{
+    display: none;
+    position: fixed;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: max-content;
+    background-color: #8959A8;
+    font-size: 30px;
+    border-radius: 12px;
+}
+#logoADR{
+    z-index: 4;
+    position: sticky;
+
+}
