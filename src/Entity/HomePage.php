@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Traits\UploadTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -9,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class HomePage
 {
+    use UploadTrait;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -25,6 +27,11 @@ class HomePage
      * @ORM\Column(type="text",nullable=true)
      */
     private $about_us;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imagePath;
 
     public function getId(): ?int
     {
@@ -51,6 +58,18 @@ class HomePage
     public function setAboutUs(string $about_us): self
     {
         $this->about_us = $about_us;
+
+        return $this;
+    }
+
+    public function getImagePath(): ?string
+    {
+        return $this->imagePath;
+    }
+
+    public function setImagePath(?string $imagePath): self
+    {
+        $this->imagePath = $imagePath;
 
         return $this;
     }

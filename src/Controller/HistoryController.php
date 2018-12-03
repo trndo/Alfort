@@ -9,15 +9,16 @@
 namespace App\Controller;
 
 use App\Entity\ADR;
+use App\Entity\SMB;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class HistoryADRController extends AbstractController
+class HistoryController extends AbstractController
 {
     /**
      * @Route("/historyADR",name="historyADR")
      */
-    public function index()
+    public function dataADR()
     {
         $repoADR=$this->getDoctrine()->getRepository(ADR::class);
 
@@ -25,5 +26,15 @@ class HistoryADRController extends AbstractController
         return $this->render('front/historyADR.html.twig',[
             'dataADR' => $homeADR]);
     }
+    /**
+     * @Route("/historySMB",name="historySMB")
+     */
+    public function dataSMB()
+    {
+        $repoSMB=$this->getDoctrine()->getRepository(SMB::class);
 
+        $homeSMB=$repoSMB->findAll();
+        return $this->render('front/historySMB.html.twig',[
+            'dataSMB' => $homeSMB]);
+    }
 }

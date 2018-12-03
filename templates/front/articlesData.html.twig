@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %}Корисне{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+                <h2>{{ articles.0.aTitle}}</h2>
+        </div>
+        <div class="row">
+            <div class="img_wrap">
+                <img id="kolenval" src="/images/kolenval.JPG">
+            </div>
+            </div>
+        <div class="row">
+            <p>{{ articles.0.aBody }}</p>
+        </div>
+            <hr>
+        </div>
+    </div>
+{% endblock %}

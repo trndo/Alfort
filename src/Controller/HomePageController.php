@@ -15,9 +15,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomePageController extends AbstractController
 {
     /**
-     * @Route("/",name="homePage")
+     * @Route("/{_locale}",name="homePage", requirements={"locale":"'%locales%'"})
      */
-    public function index()
+    public function dataHP()
     {
         $repoHomePage=$this->getDoctrine()->getRepository(HomePage::class);
         $homePage=$repoHomePage->findAll();

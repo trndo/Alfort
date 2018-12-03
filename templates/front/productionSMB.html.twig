@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Продукція SMB{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <img class="logoCompany" src="/images/logo-Smb.png">
+            <div class="col-md-10 offset-md-1 ">
+                <h2 class="title">{{ dataSMB.0.title2 }}</h2>
+                <p>{{dataSMB.0.prdct1}}</p>
+                <div class="img_wrap">
+                    <img class="img-responsive" src="/images/disk_break.png">
+                </div>
+                <p>{{dataSMB.0.prdct2}}</p>
+                <div class="img_wrap">
+                    <img class="img-responsive" src="/images/drum_brake.jpg">
+                </div>
+                <p>{{dataSMB.0.prdct3}}</p>
+                <div id="lastIMG" class="img_wrap">
+                    <img class="img-responsive" src="/images/STEERING.png">
+                    //#lastIMG{ margin-bottom: 10px;}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

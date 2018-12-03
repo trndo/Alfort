@@ -10,15 +10,15 @@ header{
     padding: 50px 0;
     z-index: 1;
 }
-
 .logo img{
     width: 100%;
+}
+.menu{
+    margin-right: -14.7px;
 }
 .menu li {
     background-color: #f0f0f0;
     font-size: 18px!important;
-
-
 }
 .menu a{
     color:#0f0f0f!important;
@@ -33,12 +33,15 @@ header{
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
+h2{
+    margin-top: 45px;
+    color: #1c2529;
+}
 h3{
     margin-top: 45px;
     color: #ffffff;
 }
-
- a.btn{
+a.btn{
     color:#ffffff;
 }
 a.btn :hover{
@@ -47,25 +50,21 @@ a.btn :hover{
 .title{
     margin-top: 20px;
 }
-.img-responsive{
-    width:735px;
-    height:345px;
-    display: inline-block;
-}
+
 footer{
+    text-align: center;
     background-image: url("/images/footer_back.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 25px 0;
 }
 .area1{
     height: 170px;
     background-color: #404040;
-    box-shadow:
-            0 1px 15px rgba(0, 0, 0, .3),
-            -23px 0 20px -23px rgba(0, 0, 0, .8),
-            23px 0 20px -23px rgba(0, 0, 0, .8),
-            0 0 40px rgba(0, 0, 0, .1) inset;
     z-index: 1;
+}
+i{
+    margin: 3px;
 }
 .area2{
     height: 220px;
@@ -81,11 +80,6 @@ footer{
     height: 170px;
     background-color: #996699;
     z-index: 1;
-    box-shadow:
-            0 1px 15px rgba(0, 0, 0, .3),
-            -23px 0 20px -23px rgba(0, 0, 0, .8),
-            23px 0 20px -23px rgba(0, 0, 0, .8),
-            0 0 40px rgba(0, 0, 0, .1) inset;
 }
 .copyText{
     color: #FFFFFF;
@@ -104,8 +98,40 @@ footer{
     font-size: 30px;
     border-radius: 12px;
 }
-#logoADR{
-    z-index: 4;
-    position: sticky;
+.logoCompany{
+    margin-top: -60px;
 
+}
+.img_wrap{
+    width:100%;
+}
+.img_wrap img{
+    width:90%;
+    margin-left:5%;
+    margin-bottom: 10px;
+}
+footer a{
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-bottom: 14px!important;
+}
+.map{
+    width: 600px;
+    height:450px;
+    border:0;
+    margin-bottom: 25px;
+}
+.contactTitle{
+    color: #1c2529;
+}
+.adress{
+    margin-top: 10px;
+}
+.mailInf{
+    margin-top: -30px;
+}
+
+#kolenval{
+    height:300px;
+    width: 400px;
 }

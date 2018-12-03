@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Продукція ADR{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <img class="logoCompany" src="/images/logo-Adr.png">
+            <div class="col-md-10 offset-md-1 ">
+                <h2 class="title">{{ dataADR.0.title2 }}</h2>
+                <p>{{dataADR.0.prdct1}}</p>
+                <div class="img_wrap">
+                    <img id="prodIMG" class="img-responsive" src="/images/disk_break.png">
+                </div>
+                <p>{{dataADR.0.prdct2}}</p>
+                <div class="img_wrap">
+                    <img id="prodIMG" class="img-responsive" src="/images/drum_brake.jpg">
+                </div>
+                <p>{{dataADR.0.prdct3}}</p>
+                <div id="prodIMG" class="img_wrap">
+                    <img class="img-responsive" src="/images/STEERING.png">
+                </div>
+                <!--#lastIMG{ margin-bottom: 10px;}-->
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
+{% block title %}Історія ADR{% endblock %}
 {% block body %}
     <div class="container">
         <div class="row">
-            <img id="logoADR" src="/images/logo-Smb.png">
+            <img class="logoCompany" src="/images/logo-Adr.png">
             <div class="col-md-10 offset-md-1 ">
-                <h2 class="title">{{ dataSMB.0.title1 }}</h2>
-                <p>{{dataSMB.0.txt1}}</p>
-                <p>{{dataSMB.0.txt2}}</p>
-                <p>{{dataSMB.0.txt3}}</p>
+                <h2 class="title">{{ dataADR.0.title1 }}</h2>
+                <p>{{dataADR.0.txt1}}</p>
+                <p>{{dataADR.0.txt2}}</p>
+                <p>{{dataADR.0.txt3}}</p>
             </div>
         </div>
     </div>

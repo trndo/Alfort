@@ -8,14 +8,18 @@
 
 namespace App\Admin;
 
+use App\Traits\UploadAdminTrait;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class ADRAdmin extends AbstractAdmin
 {
+    use UploadAdminTrait;
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('title1', TextType::class,['label' => 'Заголовок 1'])
@@ -25,7 +29,9 @@ class ADRAdmin extends AbstractAdmin
             ->add('title2',TextType::class,['label' => 'Заголовок 2'])
             ->add('prdct1',TextType::class,['label' => 'Текст 1(продукцiя)'])
             ->add('prdct2',TextType::class,['label' => 'Текст 2(продукцiя)'])
-            ->add('prdct3',TextType::class,['label' => 'Текст 3(продукцiя)']);
+            ->add('prdct3',TextType::class,['label' => 'Текст 3(продукцiя)'])
+            ->add('file',FileType::class,['required'=>false]);
+
     }
     protected function configureListFields(ListMapper $listMapper)
     {
@@ -36,7 +42,8 @@ class ADRAdmin extends AbstractAdmin
             ->addIdentifier('title2',TextType::class,['label' => 'Заголовок 2'])
             ->addIdentifier('prdct1',TextType::class,['label' => 'Текст 1(продукцiя)'])
             ->addIdentifier('prdct2',TextType::class,['label' => 'Текст 2(продукцiя)'])
-            ->addIdentifier('prdct3',TextType::class,['label' => 'Текст 3(продукцiя)']);
+            ->addIdentifier('prdct3',TextType::class,['label' => 'Текст 3(продукцiя)'])
+            ->addIdentifier('image_path',FileType::class);
 
     }
 
