@@ -2,37 +2,40 @@
 {% block title %}Головна{% endblock %}
 {% block body %}
 
-    <select onchange="window.location.href=this.value" >
-        <option value="{{ path('homePage',{ _locale: 'ru'}) }}">ru</option>
-        <option value="{{ path('homePage',{ _locale: 'en'}) }}">en</option>
-    </select>
     <div class="container">
+        {%  for dataHP in dataHomePage %}
         <div class="row">
             <div class="col-md-10 offset-md-1 ">
-                 <h2 class="title">{{ dataHomePage.0.title }}</h2>
-                <p>{{dataHomePage.0.aboutUs}}</p>
+                {% if dataHP.title != null %}
+                    <h2 class="title">{{ dataHP.title }}</h2>
+                {% endif %}
+                    {% if dataHP.imagePath != null %}
+                        <div class="img_wrap">
+                            <img class="img-responsive" src="{{ dataHP.imagePath }}">
+                        </div>
+                    {% endif %}
+                {% if dataHP.aboutUs != null %}
+                    <p>{{dataHP.aboutUs}}</p>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+        <div class="row">
+            <div class="col-md-10 offset-md-1 ">
+                <p><a href="tel:+380638735560" class="tel1">+38(063)-873-55-60</a></p>
+                <p><a href="tel:+380504238383" class="tel1">+38(050)-423-83-83</a></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 offset-md-1 ">
-                <h2 class="title">{{ dataHomePage.1.title }}</h2>
-                <div class="img_wrap">
-                    <img class="img-responsive" src="/images/fura.jpg">
-                </div>
-                <p>{{dataHomePage.1.aboutUs}}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <h2 class="title">{{ dataHomePage.2.title }}</h2>
-                <p>{{dataHomePage.2.aboutUs}}</p>
+                <p>Або надіслати нам листа на електронну адресу <a href="mailto:alfort.ua@gmail.com">alfort.ua@gmail.com</a>.</p>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md align-self-end area1">
                     <div class="block1">
-                        <h5 class="text-center" >{% trans %}Швидкість{% endtrans %}</h5>
+                        <h5 class="text-center" >Швидкість</h5>
                     </div>
                 </div>
                 <div class="col-md align-self-start area2">

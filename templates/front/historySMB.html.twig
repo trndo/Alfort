@@ -5,10 +5,19 @@
         <div class="row">
             <img class="logoCompany" src="/images/logo-Smb.png">
             <div class="col-md-10 offset-md-1 ">
-                <h2 class="title">{{ dataSMB.0.title1 }}</h2>
-                <p>{{dataSMB.0.txt1}}</p>
-                <p>{{dataSMB.0.txt2}}</p>
-                <p>{{dataSMB.0.txt3}}</p>
+                {% for historySMB in dataSMB %}
+                        {% if historySMB.imagePath != null %}
+                            <div class="img_wrap">
+                                <img class="img-responsive" src="{{ historySMB.imagePath }}">
+                            </div>
+                        {% endif %}
+                        {% if historySMB.title != null %}
+                            <h2 class="title">{{ historySMB.title }}</h2>
+                        {% endif %}
+                        {% if historySMB.txt != null %}
+                            <p>{{ historySMB.txt }}</p>
+                        {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

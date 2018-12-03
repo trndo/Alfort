@@ -22,28 +22,16 @@ class ADRAdmin extends AbstractAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('title1', TextType::class,['label' => 'Заголовок 1'])
-            ->add('txt1',TextType::class,['label' => 'Текст 1(iсторiя)'])
-            ->add('txt2',TextType::class,['label' => 'Текст 2(iсторiя)'])
-            ->add('txt3',TextType::class,['label' => 'Текст 3(iсторiя)'])
-            ->add('title2',TextType::class,['label' => 'Заголовок 2'])
-            ->add('prdct1',TextType::class,['label' => 'Текст 1(продукцiя)'])
-            ->add('prdct2',TextType::class,['label' => 'Текст 2(продукцiя)'])
-            ->add('prdct3',TextType::class,['label' => 'Текст 3(продукцiя)'])
-            ->add('file',FileType::class,['required'=>false]);
+        $formMapper->add('title', TextType::class,['label' => 'Заголовок', 'required'=>false])
+            ->add('txt',TextType::class,['label' => 'Текст (iсторiя)', 'required'=>false])
+            ->add('file',FileType::class,['label' => 'Файл/Зображення','required'=>false]);
 
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title1',TextType::class,['label' => 'Заголовок 1'])
-            ->addIdentifier('txt1',TextType::class,['label' => 'Текст 1(iсторiя)'])
-            ->addIdentifier('txt2',TextType::class,['label' => 'Текст 2(iсторiя)'])
-            ->addIdentifier('txt3',TextType::class,['label' => 'Текст 3(iсторiя)'])
-            ->addIdentifier('title2',TextType::class,['label' => 'Заголовок 2'])
-            ->addIdentifier('prdct1',TextType::class,['label' => 'Текст 1(продукцiя)'])
-            ->addIdentifier('prdct2',TextType::class,['label' => 'Текст 2(продукцiя)'])
-            ->addIdentifier('prdct3',TextType::class,['label' => 'Текст 3(продукцiя)'])
-            ->addIdentifier('image_path',FileType::class);
+        $listMapper->addIdentifier('title',TextType::class,['label' => 'Заголовок'])
+            ->addIdentifier('txt',TextType::class,['label' => 'Текст (iсторiя)'])
+            ->addIdentifier('file',FileType::class,['label' => 'Файл/Зображення']);
 
     }
 

@@ -21,42 +21,12 @@ class SMB
     /**
      * @ORM\Column(type="text",nullable=true)
      */
-    private $title1;
+    private $title;
 
     /**
      * @ORM\Column(type="text",nullable=true)
      */
-    private $txt1;
-
-    /**
-     * @ORM\Column(type="text",nullable=true)
-     */
-    private $txt2;
-
-    /**
-     * @ORM\Column(type="text",nullable=true)
-     */
-    private $txt3;
-
-    /**
-     * @ORM\Column(type="text",nullable=true)
-     */
-    private $title2;
-
-    /**
-     * @ORM\Column(type="text",nullable=true)
-     */
-    private $prdct1;
-
-    /**
-     * @ORM\Column(type="text",nullable=true)
-     */
-    private $prdct2;
-
-    /**
-     * @ORM\Column(type="text",nullable=true)
-     */
-    private $prdct3;
+    private $txt;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -68,98 +38,26 @@ class SMB
         return $this->id;
     }
 
-    public function getTitle1(): ?string
+    public function getTitle(): ?string
     {
-        return $this->title1;
+        return $this->title;
     }
 
-    public function setTitle1(string $title1): self
+    public function setTitle(string $title): self
     {
-        $this->title1 = $title1;
+        $this->title = $title;
 
         return $this;
     }
 
-    public function getTxt1(): ?string
+    public function getTxt(): ?string
     {
-        return $this->txt1;
+        return $this->txt;
     }
 
-    public function setTxt1(string $txt1): self
+    public function setTxt(string $txt1): self
     {
-        $this->txt1 = $txt1;
-
-        return $this;
-    }
-
-    public function getTxt2(): ?string
-    {
-        return $this->txt2;
-    }
-
-    public function setTxt2(string $txt2): self
-    {
-        $this->txt2 = $txt2;
-
-        return $this;
-    }
-
-    public function getTxt3(): ?string
-    {
-        return $this->txt3;
-    }
-
-    public function setTxt3(string $txt3): self
-    {
-        $this->txt3 = $txt3;
-
-        return $this;
-    }
-
-    public function getTitle2(): ?string
-    {
-        return $this->title2;
-    }
-
-    public function setTitle2(string $title2): self
-    {
-        $this->title2 = $title2;
-
-        return $this;
-    }
-
-    public function getPrdct1(): ?string
-    {
-        return $this->prdct1;
-    }
-
-    public function setPrdct1(string $prdct1): self
-    {
-        $this->prdct1 = $prdct1;
-
-        return $this;
-    }
-
-    public function getPrdct2(): ?string
-    {
-        return $this->prdct2;
-    }
-
-    public function setPrdct2(string $prdct2): self
-    {
-        $this->prdct2 = $prdct2;
-
-        return $this;
-    }
-
-    public function getPrdct3(): ?string
-    {
-        return $this->prdct3;
-    }
-
-    public function setPrdct3(string $prdct3): self
-    {
-        $this->prdct3 = $prdct3;
+        $this->txt = $txt1;
 
         return $this;
     }

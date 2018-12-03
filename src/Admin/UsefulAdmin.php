@@ -22,9 +22,9 @@ class UsefulAdmin extends AbstractAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('a_title', TextType::class,['label' => 'Заголовок (стаття)'])
-            ->add('a_body',TextType::class,['label' => 'Тiло статтi'])
-            ->add('file',FileType::class);
+        $formMapper->add('a_title', TextType::class,['label' => 'Заголовок (стаття)','required'=>false])
+            ->add('a_body',TextType::class,['label' => 'Тiло статтi','required'=>false])
+            ->add('file',FileType::class,['label' => 'Файл/Зображення','required'=>false]);
     }
 
 
@@ -32,7 +32,7 @@ class UsefulAdmin extends AbstractAdmin
     {
         $listMapper->addIdentifier('a_title','string',['label' => 'Заголовок (стаття)'])
             ->addIdentifier('a_body','string',['label' => 'Тiло статтi'])
-            ->addIdentifier('file',FileType::class);
+            ->addIdentifier('file',FileType::class,['label' => 'Файл/Зображення']);
 
     }
 }

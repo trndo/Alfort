@@ -21,16 +21,15 @@ class HomePageAdmin extends AbstractAdmin
     use UploadAdminTrait;
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('title', TextType::class,['label' => 'Заголовок'])
-                   ->add('about_us',TextType::class,['label' => 'Текст(про нас)'])
-                    ->add('file',FileType::class);
+        $formMapper->add('title', TextType::class,['label' => 'Заголовок','required'=>false])
+                   ->add('about_us',TextType::class,['label' => 'Текст(про нас)','required'=>false])
+                    ->add('file',FileType::class,['label' => 'Файл/Зображення','required'=>false]);
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->addIdentifier('title','string',['label' => 'Заголовок'])
             ->addIdentifier('about_us','string',['label' => 'Текст(про нас)'])
-            ->addIdentifier('file',FileType::class);
-
+            ->addIdentifier('file',FileType::class,['label' => 'Файл/Зображення']);
     }
 }

@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomePageController extends AbstractController
 {
     /**
-     * @Route("/{_locale}",name="homePage", requirements={"locale":"'%locales%'"})
+     * @Route("/",name="homePage")
      */
     public function dataHP()
     {

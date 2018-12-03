@@ -4,12 +4,21 @@
     <div class="container">
         <div class="row">
             <img class="logoCompany" src="/images/logo-Adr.png">
-            <div class="col-md-10 offset-md-1 ">
-                <h2 class="title">{{ dataADR.0.title1 }}</h2>
-                <p>{{dataADR.0.txt1}}</p>
-                <p>{{dataADR.0.txt2}}</p>
-                <p>{{dataADR.0.txt3}}</p>
-            </div>
+            {% for historyAdr in dataADR %}
+                <div class="col-md-10 offset-md-1 ">
+                    {% if historyAdr.imagePath != null %}
+                        <div class="img_wrap">
+                            <img class="img-responsive" src="{{ historyAdr.imagePath }}">
+                        </div>
+                    {% endif %}
+                    {% if historyAdr.title != null %}
+                        <h2 class="title">{{ historyAdr.title }}</h2>
+                    {% endif %}
+                    {% if historyAdr.txt != null %}
+                        <p>{{ historyAdr.txt }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
