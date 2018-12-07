@@ -9,6 +9,8 @@
 namespace App\Admin;
 
 use App\Traits\UploadAdminTrait;
+use Doctrine\ORM\EntityManager;
+use phpDocumentor\Reflection\Types\String_;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -20,18 +22,33 @@ class ADRAdmin extends AbstractAdmin
 {
     use UploadAdminTrait;
 
+    public function getSub()
+    {
+        return $this->getSubject();
+    }
+
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $image = $this->getSubject();
+        $fullPath = $image->getImagePath();
+        $fileFieldOptions = ['required' => false];
+        $fileFieldOptions['help'] = '<img style="width: 250px;" src="'.$fullPath.'" class="admin-preview" />';
         $formMapper->add('title', TextType::class,['label' => 'Заголовок', 'required'=>false])
             ->add('txt',TextType::class,['label' => 'Текст (iсторiя)', 'required'=>false])
-            ->add('file',FileType::class,['label' => 'Файл/Зображення','required'=>false]);
+            ->add('file', FileType::class, $fileFieldOptions,['label' => 'Файл/Зображення','required'=>false]);
+
+       /* parent::configureFormFields($formMapper);
+        $formMapper->remove('imagePath');*/
+            //->add('file',FileType::class,['label' => 'Файл/Зображення','required'=>false]);
+
 
     }
     protected function configureListFields(ListMapper $listMapper)
     {
+
         $listMapper->addIdentifier('title',TextType::class,['label' => 'Заголовок'])
             ->addIdentifier('txt',TextType::class,['label' => 'Текст (iсторiя)'])
-            ->addIdentifier('file',FileType::class,['label' => 'Файл/Зображення']);
+            ->addIdentifier('imagePath',TextType::class,['label' => 'Файл/Зображення']);
 
     }
 
