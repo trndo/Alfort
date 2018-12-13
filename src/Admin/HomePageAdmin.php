@@ -21,15 +21,25 @@ class HomePageAdmin extends AbstractAdmin
     use UploadAdminTrait;
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $image = $this->getSubject();
+        $fullPath = $image->getImagePath();
+        $fileFieldOptions = ['required' => false];
+        $fileFieldOptions['help'] = '<img style="width: 250px;" src="'.$fullPath.'" class="admin-preview" />';
         $formMapper->add('title', TextType::class,['label' => 'Заголовок','required'=>false])
                    ->add('about_us',TextType::class,['label' => 'Текст(про нас)','required'=>false])
-                    ->add('file',FileType::class,['label' => 'Файл/Зображення','required'=>false]);
+                    ->add('file',FileType::class,$fileFieldOptions,['label' => 'Файл/Зображення','required'=>false]);
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->addIdentifier('title','string',['label' => 'Заголовок'])
             ->addIdentifier('about_us','string',['label' => 'Текст(про нас)'])
-            ->addIdentifier('file',FileType::class,['label' => 'Файл/Зображення']);
+            ->addIdentifier('imagePath',FileType::class,['label' => 'Файл/Зображення'])
+            ->addIdentifier('_action', null, [
+                'actions' => [
+                    'edit' => [],
+                    'delete' => [],
+                ]
+            ]);
     }
 }

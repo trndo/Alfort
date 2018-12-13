@@ -15,6 +15,8 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Form\Type\ModelListType;
+use Sonata\AdminBundle\Form\Type\ModelType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -37,10 +39,6 @@ class ADRAdmin extends AbstractAdmin
             ->add('txt',TextType::class,['label' => 'Текст (iсторiя)', 'required'=>false])
             ->add('file', FileType::class, $fileFieldOptions,['label' => 'Файл/Зображення','required'=>false]);
 
-       /* parent::configureFormFields($formMapper);
-        $formMapper->remove('imagePath');*/
-            //->add('file',FileType::class,['label' => 'Файл/Зображення','required'=>false]);
-
 
     }
     protected function configureListFields(ListMapper $listMapper)
@@ -48,8 +46,13 @@ class ADRAdmin extends AbstractAdmin
 
         $listMapper->addIdentifier('title',TextType::class,['label' => 'Заголовок'])
             ->addIdentifier('txt',TextType::class,['label' => 'Текст (iсторiя)'])
-            ->addIdentifier('imagePath',TextType::class,['label' => 'Файл/Зображення']);
-
+            ->addIdentifier('imagePath',TextType::class,['label' => 'Файл/Зображення'])
+            ->addIdentifier('_action', null, [
+                                'actions' => [
+                                    'edit' => [],
+                                    'delete' => [],
+                                ]
+            ]);
     }
 
 }

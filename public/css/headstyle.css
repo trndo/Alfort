@@ -1,3 +1,41 @@
+@media only screen and (max-width: 991px)  {
+    .bar{
+        display: none;
+    }
+    .icon{
+        display: block;
+    }
+    .media-tel{
+        display: block;
+    }
+    .media-contacts{
+        display: none;
+    }
+    .under{
+        text-align: center;
+    }
+
+}
+
+@media only screen and (min-width: 992px)  {
+    .icon{
+        display: none;
+    }
+
+    .media-tel{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 576px)  {
+    .media-col{
+        width: 65%;
+        margin-left: 18%;
+    }
+
+}
+
 html,body{
     padding: 0;
     margin: 0;
@@ -13,8 +51,53 @@ header{
 .logo img{
     width: 100%;
 }
+.media-bar{
+    position: relative;
+    overflow-x:hidden;
+    z-index: 99;
+}
+.media-menu{
+    margin: 0;
+    padding: 1px;
+    position: fixed;
+    right: 0;
+    top:0;
+    width:50%;
+    height: 100vh;
+    list-style: none;
+    font-size: 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    transition: 0.2s;
+    transform: translateX(100%);
+}
+.media-close{
+    position: relative;
+}
+.media-close:hover{
+    cursor: pointer;
+}
+.media-link{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.media-link:hover{
+    color: #0f0f0f;
+}
+.media-menu-active{
+    transform: translateX(0%);
+}
+.media-close:hover{
+    cursor: pointer;
+}
 .menu{
+
     margin-right: -14.7px;
+}
+.menu ul{
+    background-color: #f0f0f0;
 }
 .menu li {
     background-color: #f0f0f0;
@@ -32,6 +115,12 @@ header{
     padding: 0 15px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+}
+
+.icon{
+    color:#FFFFFF;
+    font-size: 35px;
+    margin-top:-40px;
 }
 h2{
     margin-top: 45px;
